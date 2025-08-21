@@ -1,0 +1,4 @@
+to init the .exe type make compile 
+
+to run simple -- make rsimple
+to run temperature -- make rtemp
