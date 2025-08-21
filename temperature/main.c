@@ -1,17 +1,18 @@
 #include <stdio.h>
-float C_To_F(float C){
+#include <stdlib.h>
+float C_To_F(float C){ //celsius to fahrenheit
     return (C * (9.0/5.0)) + 32;
 }
 
-float F_To_C(float F){
+float F_To_C(float F){ //fahrenheit to celsius
     return (F - 32) * (5.0/9.0);
 }
 
-float C_To_K(float C){
+float C_To_K(float C){ //celsius to kelvin
     return C + 273.15;
 }
 
-float F_To_K(float F){
+float F_To_K(float F){ //fahrenheit to kelvin
     return F_To_C(F) + 273.15;
 }
 
@@ -34,15 +35,29 @@ float calc(float x, char t1, char t2){
     }
 }
 int main(){
-    char temp1, temp2;
-    float x;
-    printf("Eazy Calc for Temperature\n(LOWERCASE!, t1 to t2, x = final)\n");
-    printf("T1 > ");
-    scanf(" %c", &temp1);
-    printf("T2 > ");
-    scanf(" %c", &temp2);
-    printf("X > ");
-    scanf(" %f", &x);
-    printf("final = %f\n", calc(x, temp1, temp2));
+    system("clear");
+    while (1){
+        char temp1, temp2;
+        float x;
+        printf("\033[32mEazy Calc for Temperature\n(LOWERCASE!, t1 to t2, x = final)\033[0m\n");
+
+        //temp1
+        printf("T1 > ");
+        scanf(" %c", &temp1);
+        if (temp1 == 'e'){
+            break;
+        }
+        //temp2
+        printf("T2 > ");
+        scanf(" %c", &temp2);
+
+        //temp
+        printf("X > ");
+        scanf(" %f", &x);
+
+        //final
+        printf("\033[31mfinal = %f\033[0m\n", calc(x, temp1, temp2));
+    }
+    system("clear");
     return 0;
 }

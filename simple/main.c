@@ -1,5 +1,6 @@
 #include <stdio.h>
-float calc(float x, float y, char op){
+#include <stdlib.h>
+float calc(float x, float y, char op){ //calcluates
     switch(op){
         case '+':
             return x + y;
@@ -19,16 +20,31 @@ float calc(float x, float y, char op){
     }
 }
 int main(){
-    float x, y;
-    char op;
-    printf("Eazy Calclulator ( float, x <op> y) \n");
-    printf("enter op (+ - * /): ");
-    scanf(" %c", &op);
-    printf("enter X: ");
-    scanf(" %f", &x);
-    printf("enter Y: ");
-    scanf(" %f", &y);
-    printf(" = %f\n", calc(x, y, op));
+    system("clear");
+    while (1){
+        
+        float x, y;
+        char op;
+        printf("\033[32mEazy Calclulator ( float, x <op> y) \n'e' to exit\033[0m\n");
+        
+        //gets op
+        printf("enter op (+ - * /): ");
+        scanf(" %c", &op);
 
+        //quit if e
+        if (op == 'e'){
+            break;
+        }
+
+        //gets x and y
+        printf("enter X: ");
+        scanf(" %f", &x);
+        printf("enter Y: ");
+        scanf(" %f", &y);
+
+        //final
+        printf("\033[31m = %f\033[0m\n", calc(x, y, op));
+    }
+    system("clear");
     return 0;
 }
